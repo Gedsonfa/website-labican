@@ -12,12 +12,12 @@ layout: default
   SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
-    json: '/search.json',
+    json: "{{ '/search.json' | relative_url}}",
     searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
     noResultsText: 'Nenhum resultado encontrado',
     limit: 10
   })
 </script>
-<a href="/">Home</a>|<a href="/membros/">Membros</a>|<a href="/projetos/">Projetos</a><br>
+<a href="{{ '/' | relative_url}}">Home</a>|<a href="{{ '/membros/' | relative_url}}">Membros</a>|<a href="{{ '/projetos/' | relative_url}}">Projetos</a><br>
 
 {{content}}
