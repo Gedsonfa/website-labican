@@ -2,6 +2,22 @@
 layout: default
 ---
 
+
+
+<input type="text" id="search-input" placeholder="Buscar...">
+<ul id="results-container"></ul>
+
+<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    noResultsText: 'Nenhum resultado encontrado',
+    limit: 10
+  })
+</script>
 <a href="/">Home</a>|<a href="/membros/">Membros</a>|<a href="/projetos/">Projetos</a><br>
 
 {{content}}
