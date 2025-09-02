@@ -1,7 +1,8 @@
 # website-labican
 Projeto do novo site web do Labican
 
-jekyll serve 
+bundle exec jekyll serve --config _config.yml,_config_dev.yml
+
 
 incluir 
 
