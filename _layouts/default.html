@@ -1,0 +1,119 @@
+---
+layout: nil
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title | default: site.title | default: "LabICAN" }}</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body class="theme system">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="logo">🧠</span>
+        <span class="brand-text">LabICAN</span>
+      </a>
+      <nav class="nav">
+        <a href="{{ '/' | relative_url }}">Início</a>
+        <a href="{{ '/membros/' | relative_url }}">Membros</a>
+        <a href="{{ '/projetos/' | relative_url }}">Projetos</a>
+        <a href="{{ '/posts/' | relative_url }}">Publicações</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" aria-label="Alternar tema">🌓</button>
+        <button id="menuToggle" class="hamburger" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="{{ '/' | relative_url }}">Início</a>
+    <a href="{{ '/membros/' | relative_url }}">Membros</a>
+    <a href="{{ '/projetos/' | relative_url }}">Projetos</a>
+    <a href="{{ '/posts/' | relative_url }}">Publicações</a>
+  </div>
+
+  <main class="site-main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>{{ page.hero_title | default: "Inteligência Computacional aplicada a Negócios" }}</h1>
+          <p>{{ page.hero_subtitle | default: "Pesquisa, extensão e inovação no Seridó Potiguar." }}</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="{{ '/projetos/' | relative_url }}">Ver projetos</a>
+            <a class="btn" href="{{ '/membros/' | relative_url }}">Conheça o time</a>
+          </div>
+        </div>
+        <div class="hero-aside">
+          <div class="glass-card">
+            <label for="search-input" class="sr-only">Buscar</label>
+            <input type="search" id="search-input" placeholder="Buscar no site…" />
+            <ul id="results-container" class="search-results"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content container">
+      {{ content }}
+    </section>
+
+    <section class="highlights">
+      <div class="container grid">
+        <div class="card">
+          <h3>Projetos</h3>
+          <p>Do protótipo ao produto: soluções de dados e IA para impacto real.</p>
+          <a href="{{ '/projetos/' | relative_url }}" class="link">Explorar →</a>
+        </div>
+        <div class="card">
+          <h3>Membros</h3>
+          <p>Equipe multidisciplinar com foco em resultados e formação humana.</p>
+          <a href="{{ '/membros/' | relative_url }}" class="link">Conhecer →</a>
+        </div>
+        <div class="card">
+          <h3>Publicações</h3>
+          <p>Artigos, relatórios técnicos e materiais didáticos abertos.</p>
+          <a href="{{ '/posts/' | relative_url }}" class="link">Ler →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-inline">
+          <span class="logo">🧠</span><span>LabICAN</span>
+        </div>
+        <p class="muted">UFRN • CERES • Caicó/RN</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@labican.ufrn.br">contato@labican.ufrn.br</a></li>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Início</a></li>
+          <li><a href="{{ '/membros/' | relative_url }}">Membros</a></li>
+          <li><a href="{{ '/projetos/' | relative_url }}">Projetos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container small muted">© {{ "now" | date: "%Y" }} LabICAN — Feito com Jekyll</div>
+  </footer>
+
+  <script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
