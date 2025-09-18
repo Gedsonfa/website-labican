@@ -3,31 +3,35 @@ layout: menu
 permalink: /membros/
 ---
 
-    <h2>Discentes do Labcan</h2>
-    {% for discente in site.data.discentes %}
-    <li>
-        <!-- Foto de perfil -->
-        <img src="https://github.com/{{discente.github}}.png" alt="Perfil do Github de {{discente.name}}" width="30"
-            height="30"><br>
-
-        Nome: {{discente.name}} <br>
-
-        Github: <a href="https://github.com/{{discente.github}}">{{discente.github}}</a><br>
-
-        Sobre: <br><span class="bio" data-username="{{discente.github}}">Carregando...</span><br>
-
-    </li>
-    {% endfor %}
+        <h2>Discentes do Labcan</h2>
+        <ul class="membros-list">
+        {% for discente in site.data.discentes %}
+            <li>
+                <div class="membro-card">
+                    <img class="membro-img" src="https://github.com/{{discente.github}}.png" alt="Perfil do Github de {{discente.name}}">
+                    <div>
+                        <strong>Nome:</strong> {{discente.name}}<br>
+                        <strong>Github:</strong> {% if discente.github %}<a href="https://github.com/{{discente.github}}">{{discente.github}}</a>{% else %}Não informado{% endif %}<br>
+                        <strong>Sobre:</strong> {% if discente.github %}<span class="bio" data-username="{{discente.github}}">Carregando...</span>{% else %}<span>Sem bio</span>{% endif %}
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
 
     <script>
         document.querySelectorAll('.bio').forEach(span => {
             const user = span.dataset.username;
+            if (!user) {
+                span.innerText = "Sem bio";
+                return;
+            }
             fetch(`https://api.github.com/users/${user}`)
                 .then(res => res.json())
                 .then(data => {
                     span.innerText = data.bio || "Sem bio";
                 }).catch(() => {
-                   span.innerText = "Error ao carregar bio";
+                   span.innerText = "Erro ao carregar bio";
                 });
         });    
     </script>
