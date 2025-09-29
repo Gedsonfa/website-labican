@@ -1,4 +1,6 @@
 /* Membros - layout horizontal */
+@import "{{ site.theme }}";
+
 .membros-list {
   list-style: none;
   padding: 0;
