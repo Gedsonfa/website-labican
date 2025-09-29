@@ -1,6 +1,16 @@
 ---
-layout: menu
+layout: default
+title: Projetos
 permalink: /projetos/
 ---
 
-Inserir conteudo 
+<h1>Projetos do Laboratório</h1>
+
+<ul>
+  {% for projeto in site.projetos %}
+    <li>
+      <a href="{{ projeto.url }}">{{ projeto.title }}</a>
+      <p>{{ projeto.description }}</p>
+    </li>
+  {% endfor %}
+</ul>
