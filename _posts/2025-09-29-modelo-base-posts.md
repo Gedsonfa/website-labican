@@ -21,4 +21,4 @@ Os alunos conseguiram montar circuitos básicos e compreender os fundamentos de 
 ## 📸 Galeria
 *(adicione imagens aqui, se quiser)*  
 
-![Arduino no Labican](/assets/images/arduino-labican.jpg)
+![Arduino no Labican](/assets/images/fluxo.png)
