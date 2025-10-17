@@ -18,7 +18,22 @@ permalink: /membros/
             </li>
         {% endfor %}
         </ul>
-
+    <h2>Docentes do Labcan</h2>
+        <ul class="membros-list">
+        {% for docente in site.data.docentes %}
+            <li>
+                <div class="membro-card">
+                    <img class="membro-img" src="https://github.com/{{docente.github}}.png" alt="Perfil do Github de {{docente.name}}">
+                    <div>
+                        <strong>Nome:</strong> {{docente.name}}<br>
+                        <strong>Github:</strong> {% if docente.github %}<a href="https://github.com/{{docente.github}}">{{docente.github}}</a>{% else %}Não informado{% endif %}<br>
+                        <strong>Sobre:</strong> {% if docente.github %}<span class="bio" data-username="{{docente.github}}">Carregando...</span>{% else %}<span>Sem bio</span>{% endif %}
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+        
     <script>
         document.querySelectorAll('.bio').forEach(span => {
             const user = span.dataset.username;
@@ -36,9 +51,4 @@ permalink: /membros/
         });    
     </script>
 
-    <h2>Docentes do Labcan</h2>
-    {% for docente in site.data.docentes %}
-    <li>
-        Nome: {{docente.name}}
-    </li>
-    {% endfor %}
+    
