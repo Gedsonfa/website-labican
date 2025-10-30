@@ -18,7 +18,11 @@ permalink: /membros/
         {% for discente in site.data.discentes %}
             <li>
                 <div class="membro-card">
+                    {% if discente.github %}
                     <img class="membro-img" src="https://github.com/{{discente.github}}.png" alt="Perfil do Github de {{discente.name}}">
+                    {% else %}
+                    <img class="membro-img" src="https://img.freepik.com/fotos-premium/icone-do-circulo-da-cruz-vermelha_1239075-436.jpg?semt=ais_hybrid&w=740&q=80" alt="Sem perfil">
+                    {% endif %}
                     <div>
                         <strong>Nome:</strong> {{discente.name}}<br>
                         <strong>Github:</strong> {% if discente.github %}<a href="https://github.com/{{discente.github}}">{{discente.github}}</a>{% else %}Não informado{% endif %}<br>
@@ -34,7 +38,11 @@ permalink: /membros/
         {% for docente in site.data.docentes %}
             <li>
                 <div class="membro-card">
+                    {% if docente.github %}
                     <img class="membro-img" src="https://github.com/{{docente.github}}.png" alt="Perfil do Github de {{docente.name}}">
+                    {% else %}
+                    <img class="membro-img" src="https://img.freepik.com/fotos-premium/icone-do-circulo-da-cruz-vermelha_1239075-436.jpg?semt=ais_hybrid&w=740&q=80" alt="Sem perfil">
+                    {% endif %}
                     <div>
                         <strong>Nome:</strong> {{docente.name}}<br>
                         <strong>Github:</strong> {% if docente.github %}<a href="https://github.com/{{docente.github}}">{{docente.github}}</a>{% else %}Não informado{% endif %}<br>
