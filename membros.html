@@ -2,9 +2,19 @@
 layout: menu
 permalink: /membros/
 ---
+<style>
+    .listas{
+        display: flex;
+        gap: 20px;
+    }
+    ul {
+        list-style-type: disc;
+    }
+</style>
 
-        <h2>Discentes do Labcan</h2>
+<div class="listas">
         <ul class="membros-list">
+        <h2>Discentes do Labcan</h2>
         {% for discente in site.data.discentes %}
             <li>
                 <div class="membro-card">
@@ -18,8 +28,9 @@ permalink: /membros/
             </li>
         {% endfor %}
         </ul>
-    <h2>Docentes do Labcan</h2>
+
         <ul class="membros-list">
+        <h2>Docentes do Labcan</h2>
         {% for docente in site.data.docentes %}
             <li>
                 <div class="membro-card">
@@ -50,5 +61,5 @@ permalink: /membros/
                 });
         });    
     </script>
-
+</div>
     
