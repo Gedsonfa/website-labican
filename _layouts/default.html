@@ -25,6 +25,7 @@ layout: nil
         <a href="{{ '/membros/' | relative_url }}">Membros</a>
         <a href="{{ '/projetos/' | relative_url }}">Projetos</a>
         <a href="{{ '/posts/' | relative_url }}">Publicações</a>
+        <a href="{{'/documentos/' | relative_url}}">Documentos</a>
       </nav>
       <div class="header-actions">
         <button id="themeToggle" aria-label="Alternar tema">🌓</button>
@@ -38,6 +39,7 @@ layout: nil
     <a href="{{ '/membros/' | relative_url }}">Membros</a>
     <a href="{{ '/projetos/' | relative_url }}">Projetos</a>
     <a href="{{ '/posts/' | relative_url }}">Publicações</a>
+    <a href="{{'/documentos/ | relative_url'}}">Documentos</a>
   </div>
 
   <main class="site-main">
@@ -82,6 +84,11 @@ layout: nil
           <p>Artigos, relatórios técnicos e materiais didáticos abertos.</p>
           <a href="{{ '/posts/' | relative_url }}" class="link">Ler →</a>
         </div>
+        <div class="card">
+          <h3>Documentos</h3>
+          <p>Descrição.</p>
+          <a href="{{ '/documentos/' | relative_url }}" class="link">Ler →</a>
+        </div>
       </div>
     </section>
   </main>
@@ -107,6 +114,7 @@ layout: nil
           <li><a href="{{ '/' | relative_url }}">Início</a></li>
           <li><a href="{{ '/membros/' | relative_url }}">Membros</a></li>
           <li><a href="{{ '/projetos/' | relative_url }}">Projetos</a></li>
+          <li><a href="{{ '/documentos/ | relative_url}}">Documentos</a></li>
         </ul>
       </div>
     </div>
